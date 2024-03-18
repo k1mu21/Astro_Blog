@@ -1,4 +1,8 @@
 ---
+import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
 const pagetitles = "Astro学習ブログ";
 ---
 
@@ -11,10 +15,7 @@ const pagetitles = "Astro学習ブログ";
 		<title>{pagetitles}</title>
 	</head>
 	<body>
-        <a href="/">ホーム</a>
-        <a href="/about/">概要</a>
-        <a href="/blog/">ブログ</a>
-
+        <Header />
 		<h1>{pagetitles}</h1>
         <h2>ここには私がAstroを学んでいく旅の様子を投稿します</h2>
         <ul>
@@ -24,5 +25,9 @@ const pagetitles = "Astro学習ブログ";
                 <a href="/posts/post-3">記事３</a>
             </li>
         </ul>
+        <Footer />
+        <script>
+            import "../scripts/menu.js";
+        </script>
 	</body>
 </html>

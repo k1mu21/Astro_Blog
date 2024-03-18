@@ -1,5 +1,8 @@
 ---
 import '../styles/global.css';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+
 
 const pageTitles = "私について";
 
@@ -39,10 +42,7 @@ const skillColor = "navy";
 		  </style>
 	</head>
 	<body>
-        <a href="/">ホーム</a>
-        <a href="/about/">概要</a>
-		<a href="/blog/">ブログ</a>
-
+		<Header />
 		<h1>{pageTitles}</h1>
         <h2>...そして私の新しいサイトについて</h2>	
 
@@ -68,6 +68,9 @@ const skillColor = "navy";
 		{finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
 
 		{goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
-
+		<Footer />
+		<script>
+			import "../scripts/menu.js";
+		</script>
 	</body>
 </html>
