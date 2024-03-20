@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro'
 
 
 const pageTitles = "私について";
@@ -21,29 +19,7 @@ const goal = 3;
 
 const skillColor = "navy";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitles}</title>
-		<style define:vars={{skillColor}}>
-			h1 {
-			  color: purple;
-			  font-size: 4rem;
-			}
-
-			.skill {
-				color: var(--skillColor);
-				font-weight: bold;
-  			}
-		  </style>
-	</head>
-	<body>
-		<Header />
-		<h1>{pageTitles}</h1>
+		<BaseLayout pageTitle={pageTitles}>
         <h2>...そして私の新しいサイトについて</h2>	
 
 		<p>私はAstroの入門チュートリアルを進めています。これは私のウェブサイトの2番目のページで、自分で作った初めてのページです！</p>
@@ -68,7 +44,7 @@ const skillColor = "navy";
 		{finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
 
 		{goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
-		<Footer />
+		</BaseLayout>
 		<script>
 			import "../scripts/menu.js";
 		</script>
