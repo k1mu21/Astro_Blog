@@ -14,13 +14,26 @@ const identity = {
 const skills = ["HTML","CSS","JavaScript","Go","Java","PHP","C","CPP","C#","Python"];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
 const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
-		<BaseLayout pageTitle={pageTitles}>
-        <h2>...そして私の新しいサイトについて</h2>	
+<style define:vars={{skillColor, fontWeight, textCase}}>
+	h1 {
+	  color: purple;
+	  font-size: 4rem;
+	}
+	.skill {
+	  color: var(--skillColor);
+	  font-weight: var(--fontWeight);
+	  text-transform: var(--textCase);
+	}
+  </style>
+	<BaseLayout pageTitle={pageTitles}>
+		<h2>...そして私の新しいサイトについて</h2>	
 
 		<p>私はAstroの入門チュートリアルを進めています。これは私のウェブサイトの2番目のページで、自分で作った初めてのページです！</p>
 
@@ -44,9 +57,9 @@ const skillColor = "navy";
 		{finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
 
 		{goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
-		</BaseLayout>
-		<script>
-			import "../scripts/menu.js";
-		</script>
+	</BaseLayout>
+	<script>
+		import "../scripts/menu.js";
+	</script>
 	</body>
 </html>
